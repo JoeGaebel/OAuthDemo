@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "testcafe": "^1.0.0"
+  },
+  "scripts": {
+    "debug": "testcafe chrome *.js",
+    "test": "testcafe chrome:headless *.js"
+  }
+}

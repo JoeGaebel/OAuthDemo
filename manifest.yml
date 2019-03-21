@@ -1,0 +1,17 @@
+---
+applications:
+- name: frontend
+  buildpack: staticfile_buildpack
+  path: applications/frontend/dist
+  memory: 64M
+  routes:
+    - route: oauthdemo.cfapps.io
+- name: backend
+  memory: 1GB
+  instances: 1
+  routes:
+  - route: oauthdemo.cfapps.io/api
+  buildpack: java_buildpack
+  path: applications/backend/build/libs/backend.jar
+  env:
+    FRONTEND_URL: https://oauthdemo.cfapps.io

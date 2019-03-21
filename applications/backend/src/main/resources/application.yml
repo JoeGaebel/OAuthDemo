@@ -1,0 +1,17 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id:
+            client-secret:
+            provider: google
+            scope: email
+            redirect-uri-template: "{baseUrl}/login/oauth2/code/{registrationId}"
+
+frontend.url: http://localhost:8081
+server:
+  port: 8080
+  servlet:
+    context-path: /api

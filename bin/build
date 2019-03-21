@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+(cd applications/frontend; yarn build)
+(./gradlew applications:backend:build)
