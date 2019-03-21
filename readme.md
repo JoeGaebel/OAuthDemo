@@ -1,3 +1,5 @@
+![](https://user-images.githubusercontent.com/9356287/54732068-d71b5f00-4be5-11e9-949c-330fc6a6dbb7.gif)
+
 # OAuth Demo
 This project shows an example of how to get the OAuth2 Code Flow working with Spring and Google.
 
