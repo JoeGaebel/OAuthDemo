@@ -18,5 +18,8 @@ test('Google Login Journey', async t => {
   await t
     .expect(Selector('h1').innerText).eql('OAuth Demo')
     .expect(Selector('p').innerText).contains(`${username}@gmail.com`)
+
+  await t.click('button')
+  await t.expect(Selector('p').withText("Updated!").exists).ok
 })
 

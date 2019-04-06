@@ -4,6 +4,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.http.ResponseEntity.ok
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
@@ -12,6 +13,11 @@ class UserController {
     fun getPreference(user: OAuth2AuthenticationToken): ResponseEntity<Response> {
         val email = extractEmail(user)
         return ok(Response(email))
+    }
+
+    @PostMapping("/users/update")
+    fun doUpdateThings(user: OAuth2AuthenticationToken): ResponseEntity<String> {
+        return ok("Updated!")
     }
 
     private fun extractEmail(user: OAuth2AuthenticationToken) = user.principal.attributes["email"] as String
